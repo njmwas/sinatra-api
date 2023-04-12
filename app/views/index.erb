@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamaa Digital API Doc</title>
+
+    <style>
+        *{
+            box-sizing: 0;
+        }
+        .endpoint{
+            padding: 5px;
+            border-radius: 5px;
+            background: black;
+            color: white;
+        }
+        h1,h2,h3,h4,p{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            list-style:none;
+            margin:0;
+            padding:0;
+        }
+
+        ul li{
+            padding: 10px 0
+        }
+    </style>
+
+</head>
+<body>
+    <h2>Chamaa Digital API Doc</h2>
+    <h4>Base URL: <%= request.env["rack.url_scheme"] %>://<%= request.env["HTTP_HOST"] %></h4>
+    <% api.each do |key, endpoints| %>
+        <h4><%= key %> Endpoints</h4>
+        <ul>
+        <% endpoints.each do | endpoint | %>
+            <li>
+                <div class="endpoint"><%= endpoint[:method] %>: <%= endpoint[:path] %></div>
+                <p><%= endpoint[:description] %></p>
+            </li>
+        <% end %>
+        </ul>
+    <% end %>
+</body>
+</html>
