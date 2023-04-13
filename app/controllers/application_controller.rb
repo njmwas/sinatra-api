@@ -19,7 +19,7 @@ class ApplicationController < Sinatra::Base
     condition do
       begin
         authorization_header = request.env['HTTP_AUTHORIZATION']
-        unless authorization_header.include? 'Bearer'
+        unless authorization_header
           raise "Unauthorized"
         end
         
@@ -37,6 +37,7 @@ class ApplicationController < Sinatra::Base
 
         # pp userInfo
       rescue => exception
+        pp exception
         halt 401, {error: "Unauthorized"}.to_json
       end
 
