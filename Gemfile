@@ -56,4 +56,4 @@ end
 gem "httparty", "~> 0.21.0"
 
 gem "faker", "~> 2.19"
-gem "pg"
+gem "pg", "~> 1.5"
