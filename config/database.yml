@@ -13,4 +13,5 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: postgres://chamadb_user:SNYcA3BC19oziDs3bi1m7SqeOZcASpZp@dpg-cj0jbr3438irjjdjnhbg-a/chamadb
+  # database: db/production.sqlite3
