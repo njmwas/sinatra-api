@@ -43,6 +43,7 @@ group :development do
   # Automatically reload when there are changes
   # https://github.com/alexch/rerun
   gem "rerun"
+  gem "faker", "~> 2.19"
 end
 
 # These gems will only be used when we are running tests
@@ -55,5 +56,4 @@ end
 
 gem "httparty", "~> 0.21.0"
 
-gem "faker", "~> 2.19"
 gem "pg", "~> 1.5"
