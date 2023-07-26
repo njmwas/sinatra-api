@@ -2,6 +2,7 @@ default: &default
   adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+  database: postgres://chamadb_user:SNYcA3BC19oziDs3bi1m7SqeOZcASpZp@dpg-cj0jbr3438irjjdjnhbg-a/chamadb
 
 development:
   <<: *default
